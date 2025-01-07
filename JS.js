@@ -83,15 +83,53 @@
 
 //* Números del 1 al N
 //* Pide al usuario un número N e imprime todos los números del 1 al N usando un while
-const prompt =require("prompt-sync") ();
+// const prompt =require("prompt-sync") ();
 
-let limite = Number(prompt("¿Hasta que numero contar?: "));
-let num = 1;
-while (num <= limite){
-    console.log("Número :", num);
-    num +=1
+// let limite = Number(prompt("¿Hasta que numero contar?: "));
+// let num = 1;
+// while (num <= limite){
+//     console.log("Número :", num);
+//     num +=1
+// }
+
+
+
+
+
+
+
+
+
+// *20.Menú interactivo
+// *Diseña un programa que muestre un menú al usuario con opciones como:
+// *1. Calcular el cuadrado de un número.
+// *2. Mostrar números pares entre dos valores.
+// *3. Salir del programa.
+// *Usa un bucle while para mantener el menú activo hasta que el usuario elija
+// * salir.
+
+
+//* Menú interactivo
+counter = 0
+while (counter === 0 ){
+let opcion = Number(prompt("Elija una opción:\n1. Calcular el cuadrado de un número.\n2. Mostrar números pares entre dos valores.\n3. Salir del programa."))
+if (opcion === 1 ){
+numero = Number(prompt("Escriba un número: "))
+console.log("El cuadrado es : ", Math.pow(numero,2));
+
+} else if (opcion === 2){
+let inicio = Number(prompt("Escriba el primer número:"));
+let fin = Number(prompt("Escriba el segundo número:"));
+console.log(`Números pares entre ${inicio} y ${fin}:`);
+for (let i = inicio; i <= fin; i++) {
+if (i % 2 === 0) {
+console.log(i);
+}}
+} else if(opcion === 3 ){
+console.log("usted ha salido del menú");
+counter = 1;
+
+} else {
+break;
 }
-
-
-
-
+}
