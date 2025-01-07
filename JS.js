@@ -94,8 +94,91 @@
 
 
 
+//* 10.
+let numeroPrimo = parseInt(prompt("Escribe un número para verificar si es primo:"));
+let esPrimo = true;
+
+if (numeroPrimo <= 1) {
+    esPrimo = false;
+} else {
+    for (let i = 2; i < numeroPrimo; i++) {
+        if (numeroPrimo % i === 0) {
+            esPrimo = false;
+            break;
+        }
+    }
+}
+
+if (esPrimo) {
+    console.log(numeroPrimo + " es un número primo.");
+} else {
+    console.log(numeroPrimo + " no es un número primo.");
+}
 
 
+//* 11.
+let base = parseFloat(prompt("Escribe la base del triángulo:"));
+let altura = parseFloat(prompt("Escribe la altura del triángulo:"));
+let area = (base * altura) / 2;
+console.log("El área del triángulo es: " + area);
+
+
+//* 12.
+function encontrarMayor(a, b, c) {
+    if (a >= b && a >= c) {
+        return a;
+    } else if (b >= a && b >= c) {
+        return b;
+    } else {
+        return c;
+    }
+}
+
+let numA = parseInt(prompt("Escribe el primer número:"));
+let numB = parseInt(prompt("Escribe el segundo número:"));
+let numC = parseInt(prompt("Escribe el tercer número:"));
+console.log("El mayor de los tres números es: " + encontrarMayor(numA, numB, numC));
+
+
+//* 15.
+function esPalindromo(palabra) {
+    let invertida = palabra.split("").reverse().join("");
+    return palabra === invertida;
+}
+
+let palabraUsuario = prompt("Escribe una palabra:");
+if (esPalindromo(palabraUsuario)) {
+    console.log("La palabra '" + palabraUsuario + "' es un palíndromo.");
+} else {
+    console.log("La palabra '" + palabraUsuario + "' no es un palíndromo.");
+}
+
+//*17.
+function invertirCadena(cadena) {
+    return cadena.split("").reverse().join("");
+}
+
+let cadenaUsuario = prompt("Escribe una cadena:");
+console.log("La cadena invertida es: " + invertirCadena(cadenaUsuario));
+
+
+//* 19.
+function esPerfecto(numero) {
+    let sumaDivisores = 0;
+    for (let i = 1; i < numero; i++) {
+        if (numero % i === 0) {
+            sumaDivisores += i;
+        }
+    }
+    return sumaDivisores === numero;
+}
+
+console.log("Números perfectos entre 1 y 1000:");
+for (let i = 1; i <= 1000; i++) {
+    if (esPerfecto(i)) {
+        console.log(i);
+    }
+}
 
 
 
